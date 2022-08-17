@@ -15,7 +15,7 @@ pipeline {
             }
         }
         stage('Two') {
-            when {not {branch 'main'}}
+            when {branch 'test'}
             steps {
                 echo "Welcome to DevOps"
             }
