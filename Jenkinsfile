@@ -16,5 +16,10 @@ pipeline {
                 echo 'Welcome to DevOps'
             }
         }
+        stage('Three') {
+            steps {
+                sh "env"
+            }
+        }
     }
 }
