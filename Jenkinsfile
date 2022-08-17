@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+        ENV_URL=abc.xyz
+        SSH_CRED=credentials('SSH')
+    }
 
     stages {
         stage('One') {
