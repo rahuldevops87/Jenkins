@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        string {name: 'PERSON', defaultValue: 'Mr. Jenkins', description: 'Please enter a name'}
+        string (name: 'PERSON', defaultValue: 'Mr. Jenkins', description: 'Please enter a name')
     }
     environment {
         ENV_URL='abc.xyz'
