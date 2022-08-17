@@ -9,13 +9,14 @@ pipeline {
     }
 
     stages {
+        stage('Parallel stages') {
         parallel {
             stage('One') {
             steps {
                 echo "Hello ${params.PERSON}"
             }
         }
-        stage('Two') {
+            stage('Two') {
             when {branch 'test'}
             steps {
                 echo "Welcome to DevOps"
