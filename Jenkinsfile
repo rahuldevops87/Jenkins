@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    parameters {
+        string {name: 'PERSON', defaultValue: 'Mr. Jenkins', description: 'Please enter a name'}
+    }
     environment {
         ENV_URL='abc.xyz'
         SSH_CRED=credentials('SSH')
@@ -14,11 +17,6 @@ pipeline {
         stage('Two') {
             steps {
                 echo 'Welcome to DevOps'
-            }
-        }
-        stage('Three') {
-            steps {
-                sh "env"
             }
         }
     }
