@@ -11,12 +11,12 @@ pipeline {
     stages {
         stage('One') {
             steps {
-                echo 'Hello ${params.name}'
+                echo "Hello ${params.name}"
             }
         }
         stage('Two') {
             steps {
-                echo 'Welcome to DevOps'
+                echo "Welcome to DevOps"
             }
         }
     }
