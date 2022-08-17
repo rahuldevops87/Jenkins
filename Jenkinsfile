@@ -9,7 +9,8 @@ pipeline {
     }
 
     stages {
-        stage('One') {
+        parallel {
+            stage('One') {
             steps {
                 echo "Hello ${params.PERSON}"
             }
@@ -19,6 +20,7 @@ pipeline {
             steps {
                 echo "Welcome to DevOps"
             }
+        }
         }
     }
 }
