@@ -22,6 +22,11 @@ pipeline {
                 echo "Welcome to DevOps"
             }
         }
+            stage('Three') {
+                steps {
+                sh "ansible-playbook pingtest.yaml -e ansible_user=centos -e ansible_ssh_password=DevOps321 -i inventory.txt"
+            }
+        }
         }
     }
 }
