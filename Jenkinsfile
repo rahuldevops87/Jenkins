@@ -24,7 +24,8 @@ pipeline {
         }
             stage('Three') {
                 steps {
-                sh "ansible-playbook ping-test.yaml -e ansible_user=centos -e ansible_ssh_password=DevOps321 -i inventory.txt"
+                    sh "env"
+                    sh "ansible-playbook ping-test.yaml -e ansible_user=centos -e ansible_ssh_password=DevOps321 -i inventory.txt"
             }
         }
         }
