@@ -25,7 +25,7 @@ pipeline {
             stage('Three') {
                 steps {
                     sh "env"
-                    sh "ansible-playbook ping-test.yaml -e ansible_user=${SSH_CRED_USER} -e ansible_ssh_password=${SSH_CRED_PSW} -i inventory.txt"
+                    sh "ansible-playbook ping-test.yaml -e ansible_user=${SSH_CRED_USR} -e ansible_ssh_password=${SSH_CRED_PSW} -i inventory.txt"
             }
         }
         }
