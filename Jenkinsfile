@@ -12,17 +12,18 @@ pipeline {
         stage('Parallel stages') {
         parallel {
             stage('One') {
+                when {branch pattern: "feature-.*", comparator: "REGEXP"}
             steps {
                 echo "Hello ${params.PERSON}"
             }
         }
             stage('Two') {
-            when {branch 'test'}
             steps {
                 echo "Welcome to DevOps"
             }
         }
             stage('Three') {
+                when {branch 'main'}
                 steps {
                     sh "ansible-playbook ping-test.yaml -e ansible_user=${SSH_CRED_USR} -e ansible_ssh_password=${SSH_CRED_PSW} -i inventory.txt"
             }
